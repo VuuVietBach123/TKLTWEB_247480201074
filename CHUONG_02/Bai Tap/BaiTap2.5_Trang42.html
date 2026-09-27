@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký thể thao</title>
+    <style>
+        .container {
+            width: 650px;
+            border: 1px solid #000;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+        }
+        .header-title {
+            background-color: #a6a6a6;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .main-title {
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .form-section {
+            padding: 10px 40px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .form-group label {
+            width: 130px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .section-header {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-title">Đăng ký thể thao</div>
+    
+    <div class="header-content">
+        <div style="border: 1px solid #000; padding: 5px; display: flex; align-items: center; gap: 5px;">
+            <div>TRƯỜNG ĐẠI HỌC BẠC LIÊU<br><small>KHOA KỸ THUẬT VÀ CÔNG NGHỆ</small></div>
+        </div>
+        <div style="text-align: center;">
+            CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM<br>
+            Độc lập - Tự do - Hạnh phúc
+        </div>
+    </div>
+
+    <div class="main-title">PHIẾU ĐĂNG KÝ DỰ THI THỂ THAO</div>
+
+    <form class="form-section">
+        <div class="form-group">
+            <label for="fullname">Họ tên :</label>
+            <input type="text" id="fullname" name="fullname" style="width: 200px;">
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" name="password" style="width: 170px;">
+        </div>
+
+        <div class="form-group">
+            <label>Môn thể thao:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="sport" value="Bóng đá"> Bóng đá</label>
+                <label><input type="checkbox" name="sport" value="Bóng chuyền"> Bóng chuyền</label>
+                <label><input type="checkbox" name="sport" value="Điền kinh"> Điền kinh</label>
+                <label><input type="checkbox" name="sport" value="Bơi lội"> Bơi lội</label>
+            </div>
+        </div>
+
+        <div class="section-header">PHẦN CỨNG MÁY TÍNH</div>
+
+        <div style="margin-top: 15px;">
+            <p><strong>Thiết bị:</strong></p>
+            <select name="device" size="4" style="width: 150px;">
+                <option value="CPU" selected>CPU</option>
+                <option value="Mainboard">Mainboard</option>
+                <option value="ASUS DVD">ASUS DVD</option>
+                <option value="RAM KingMax">RAM KingMax</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <p><strong>Thời gian bảo hành:</strong></p>
+            <select name="warranty" style="width: 120px;">
+                <option value="1"></option>
+                <option value="2">6 Tháng</option>
+                <option value="3">12 Tháng</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
