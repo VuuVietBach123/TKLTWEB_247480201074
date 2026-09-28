@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    /* Cú Pháp: arr.length */
+    var arr = new Array(1, 2, 4, 5, 9. 6);
+    alert(arr.length);
+
+    /* Cú Pháp: arr.join */
+    document.write(arr.join() + '<br>');
+    // result 1, 2, 4, 5, 9, 6
+    // gộp mảng ngăn cách nhau bằng - 
+    document.write(arr.join('-') + '<br>');
+    // result: 1-2-4-5-9-6
+
+    /* valieOff():*/
+    var arr = new Array(1, 2, 4, 5, 9, 6);
+    document.write(arr.join() + '<br>');
+    arr.push(7); // thêm 7 vào mảng
+    document.write(arr.join() + '<br>');
+    arr.push(3, 8); // thêm 3, 0 vào mảng 
+    document.write(arr.join() + '<br>');
+
+    /* pop():*/
+    var arr = new Array(1, 2, 4, 5, 9, 6)
+    document.write(arr.join() + '<br>');
+    arr.pop(); // Xoá phần tử cuối 
+    document.write(arr.join() + '<br>');
+
+    /* unshift():*/ 
+    var arr = new Array(1, 2, 4, 5, 9, 6);
+    document.write(arr.join() + '<br>');
+    // Thêm 7 vào đầu mảng
+    arr.unshift(7);
+    document.write(arr.join() + '<br>');
+    // Thêm 3, 8 vào đầu mảng 
+    arr
+   </script> 
+</body>
+</html>
