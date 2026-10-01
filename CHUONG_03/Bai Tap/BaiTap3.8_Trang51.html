@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu đa cấp CSS</title>
+</head>
+<head>
+    <style>
+        body
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff;
+        }
+        /* Thanh menu chính */
+        ul.menu
+        {
+            list-style-type: none;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        ul.menu > li
+        {
+            position: relative;
+        }
+        ul.menu > li > a
+        {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        ul.menu > li > a:hover
+        {
+            background-color: #111;
+        }
+
+        /* Menu thả xuống cấp 1 (Khoá học) */
+        ul.submenu
+        {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        ul.menu > li:hover ul.submenu 
+        {
+            display: block;
+        }
+        ul.submenu > li
+        {
+            position: relative;
+            border-bottom: 1px solid #444;
+        }
+        ul.submenu > li > a
+        {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+        ul.submenu > li > a:hover
+        {
+            background-color: #444;
+        }
+
+        /* Menu con bên phải cấp 2 (Tin học căn bản -> các môn con) */
+        ul.sub-submenu
+        {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #333;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 240px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        ul.submenu > li:hover ul.sub-submenu
+        {
+            display: block;
+        }
+        ul.sub-submenu > li > a
+        {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+        ul.submenu > li > a:hover
+        {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li>
+            <a href="#">Khoá học</a>
+            <ul class="submenu">
+                <li>
+                    <a href="#">Tin học căn bản &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <ul class="submenu">
+                        <li><a href="#">Microsoft Word 2010</a></li>
+                        <li><a href="#">Microsoft Excel 2010</a></li>
+                        <li><a href="#">Microsoft PowerPoint 2010</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tin học phổ thông</a></li>
+                <li><a href="#">Lập trình Pascal</a></li>
+                <li><a href="#">Lập trình C</a></li>
+                <li><a href="#">Thiết kế website</a></li>
+                <li><a href="#">Vẽ kỹ thuật AutoCAD</a></li>
+           </ul>
+        </li>
+        <li><a href="#">Bài viết</a></li>
+        <li><a href="#">Thủ thuật</a></li>
+    </ul>
+</body>
+</html>
