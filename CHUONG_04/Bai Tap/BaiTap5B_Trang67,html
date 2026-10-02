@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript 5B - Đối tượng Date</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { background: #f4f4f4; padding: 20px; border-radius: 5px; width: 400px; }
+        p { margin: 8px 0; }
+    </style>
+</head>
+<body>
+
+    <h2>Bài Tập JavaScript 5B: Sử dụng đối tượng Date</h2>
+
+    <div class="box">
+        <p><strong>Ngày:</strong> <span id="lblNgay">...</span></p>
+        <p><strong>Tháng:</strong> <span id="lblThang">...</span></p>
+        <p><strong>Năm đầy đủ (getFullYear):</strong> <span id="lblNamFull">...</span></p>
+        <p><strong>Năm 2 số cuối (getYear):</strong> <span id="lblNam2So">...</span></p>
+        <p><strong>Thứ trong tuần (getDay):</strong> <span id="lblThu">...</span></p>
+        <p><strong>Giờ hệ thống:</strong> <span id="lblThoiGian">...</span></p>
+    </div>
+
+    <br>
+    <button onclick="layThoiGianHeThong()">Cập nhật thời gian</button>
+
+    <script>
+        function layThoiGianHeThong() {
+            // 1. Khai báo đối tượng Date để lấy thời gian hệ thống hiện tại
+            var d = new Date();
+
+            // 2. Lấy các thông số thời gian dựa theo gợi ý
+            var ngay = d.getDate();                 // Ngày (1-31)
+            var thang = d.getMonth() + 1;           // Tháng (0-11 nên phải cộng thêm 1)
+            var namFull = d.getFullYear();          // Năm đầy đủ (YYYY)
+            var nam2So = d.getYear();               // Năm 2 số cuối (tính từ năm 1900)
+            var thuSo = d.getDay();                 // Thứ trong tuần (0-6, Chủ Nhật là 0)
+            
+            var gio = d.getHours();                 // Giờ (0-23)
+            var phut = d.getMinutes();              // Phút (0-59)
+            var giay = d.getSeconds();              // Giây (0-59)
+
+            // Chuyển đổi số thứ trong tuần thành tên tiếng Việt cho trực quan
+            var tenThu = "";
+            switch(thuSo) {
+                case 0: tenThu = "Chủ Nhật"; break;
+                case 1: tenThu = "Thứ Hai"; break;
+                case 2: tenThu = "Thứ Ba"; break;
+                case 3: tenThu = "Thứ Tư"; break;
+                case 4: tenThu = "Thứ Năm"; break;
+                case 5: tenThu = "Thứ Sáu"; break;
+                case 6: tenThu = "Thứ Bảy"; break;
+            }
+
+            // 3. Hiển thị dữ liệu lên trang web thông qua các thẻ span
+            document.getElementById("lblNgay").innerText = ngay;
+            document.getElementById("lblThang").innerText = thang;
+            document.getElementById("lblNamFull").innerText = namFull;
+            document.getElementById("lblNam2So").innerText = nam2So;
+            document.getElementById("lblThu").innerText = tenThu + " (Giá trị số: " + thuSo + ")";
+            document.getElementById("lblThoiGian").innerText = gio + ":" + phut + ":" + giay;
+        }
+
+        // Tự động chạy hàm khi vừa tải trang xong
+        window.onload = function() {
+            layThoiGianHeThong();
+        };
+    </script>
+
+</body>
+</html>

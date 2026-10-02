@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript 3B</title>
+</head>
+<body>
+
+    <h2>Bài Tập JavaScript 3B</h2>
+
+    <!-- Textbox có tên là msg03, giá trị ban đầu là "Hello EveryBody" -->
+    <input type="text" name="msg03" id="msg03" value="Hello EveryBody" size="35">
+    
+    <br><br>
+
+    <!-- Nút nhấn có name là Hell và value là "Hello" -->
+    <input type="button" name="Hell" value="Hello" onclick="hienThongBao()">
+
+    <script>
+        function hienThongBao() {
+            // Lấy giá trị hiện tại trong textbox msg03
+            var txtValue = document.getElementById("msg03").value;
+            
+            // Hiển thị hộp thoại thông báo kết hợp chuỗi
+            alert(txtValue + ", I am studying web design with Javascript");
+        }
+    </script>
+
+</body>
+</html>

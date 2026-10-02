@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript 4B</title>
+</head>
+<body>
+
+    <h2>Bài Tập JavaScript 4B</h2>
+
+    <!-- Textbox 1 (Họ tên) -->
+    <label>Họ tên:</label>
+    <input type="text" name="txthoten" id="txthoten" value="Nguyễn Văn A">
+    <!-- Nút 1 -->
+    <input type="button" name="hoten" value="Họ tên" onclick="cthoten()">
+
+    <br><br>
+
+    <!-- Textbox 2 (Đơn vị) -->
+    <label>Đơn vị:</label>
+    <input type="text" name="txtdonvi" id="txtdonvi" value="Đơn vị ABC">
+    <!-- Nút 2 -->
+    <input type="button" name="donvi" value="đơn vị" onclick="ctdonvi()">
+
+    <script>
+        // Hàm hiển thị nội dung textbox họ tên
+        function cthoten() {
+            var valHoten = document.getElementById("txthoten").value;
+            alert("Họ tên là: " + valHoten);
+        }
+
+        // Hàm hiển thị nội dung textbox đơn vị
+        function ctdonvi() {
+            var valDonvi = document.getElementById("txtdonvi").value;
+            alert("Đơn vị là: " + valDonvi);
+        }
+    </script>
+
+</body>
+</html>

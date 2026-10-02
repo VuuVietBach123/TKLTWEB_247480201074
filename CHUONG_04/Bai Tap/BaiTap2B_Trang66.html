@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript 2B</title>
+</head>
+<body>
+
+    <h2>Bài Tập JavaScript 2B</h2>
+
+    <!-- Nút nhấn Hello -->
+    <input type="button" name="Hello" value="Hello" onclick="hienThongBao()">
+
+    <br><br>
+
+    <!-- Textbox txtthongbao -->
+    <input type="text" name="txtthongbao" id="txtthongbao" size="30">
+
+    <script>
+        function hienThongBao() {
+            // Lấy phần tử textbox thông qua id
+            var txt = document.getElementById("txtthongbao");
+            
+            // Gán giá trị "Hello JavaScript" vào textbox
+            txt.value = "Hello JavaScript";
+        }
+    </script>
+
+</body>
+</html>
