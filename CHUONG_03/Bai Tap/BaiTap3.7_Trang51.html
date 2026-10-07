@@ -1,75 +1,89 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trung tâm Công nghệ phần mềm</title>
+   <meta charset="UTF-8">
+   <title>Bài tập 3.7_Trang51</title>
+
+   <style>
+       body {
+           margin: 30px;
+           font-family: Arial;
+       }
+
+       .khung {
+           width: 1800
+           px;
+           height: 250px;
+           display: flex;
+           border: 1px solid black;
+       }
+
+       /* Menu bên trái */
+       .menu {
+           width: 230px;
+           background-color: #222;
+           padding: 15px;
+       }
+
+       .menu a {
+           display: block;
+           color: white;
+           font-weight: bold;
+           text-decoration: underline;
+           margin-bottom: 12px;
+       }
+
+       /* Nội dung bên phải */
+       .noidung {
+           flex: 1;
+           background-color: #eee;
+           padding: 15px;
+       }
+
+       .noidung h3 {
+           margin-top: 0;
+       }
+   </style>
 </head>
-<head>
-    <style>
-        body
-        {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-        }
-        .sidebar 
-        {
-            width: 250px;
-            background-color: #333;
-            min-height: 100vh;
-            padding: 15px 0;
-        }
-        .sidebar ul
-        {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .sidebar li
-        {
-            padding: 10px 20px;
-            border-bottom: 1px solid #444;
-        }
-        .sidebar li a 
-        {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-        .sidebar li a:hover
-        {
-            text-decoration: underline;
-        }
-        .content
-        {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border: 1px solid #ccc;
-        }
-        .content h3
-        {
-            margin-top: 0;
-        }
-    </style>
-</head>
+
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="gioithieu.htm">Giới thiệu</a></li>
-            <li><a href="tintuc.htm">Tin tức</a></li>
-            <li><a href="daotao.htm">Đào tạo</a></li>
-            <li><a href="thoikhoabieu.htm">Thời khoá biểu</a></li>
-            <li><a href="lichthi.htm">Lịch thi</a></li>
-            <li><a href="phongchucnang.htm">Phòng chức năng</a></li>
-            <li><a href="cackhoa.htm">Các khoa</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <h3> Giới thiệu về Trung tâm công nghệ phần mềm </h3>
-        <p> Trung tâm được thành lập ngày 10/02/1999, trụ sở đặt tại Khoa
-            Kỹ thuật và công nghệ - Trường Đại Học Bạc Liêu,...
-        </p>
-    </div>
+
+   <div class="khung">
+
+       <!-- MENU -->
+       <div class="menu">
+
+           <a href="gioithieu.htm">Giới thiệu</a>
+
+           <a href="tintuc.htm">Tin tức</a>
+
+           <a href="daotao.htm">Đào tạo</a>
+
+           <a href="thoikhoabieu.htm">Thời khóa biểu</a>
+
+           <a href="lichthi.htm">Lịch thi</a>
+
+           <a href="phongchucnang.htm">Phòng chức năng</a>
+
+           <a href="cackhoa.htm">Các Khoa</a>
+
+       </div>
+
+
+       <!-- NỘI DUNG -->
+       <div class="noidung">
+
+           <h3>Giới thiệu về Trung tâm Công nghệ phần mềm</h3>
+
+           <p>
+               Trung tâm được thành lập ngày 10/02/1999,
+               trụ sở đặt tại Khoa Kỹ thuật và Công nghệ -
+               Trường Đại học Bạc Liêu,...
+           </p>
+
+       </div>
+
+   </div>
+
 </body>
 </html>

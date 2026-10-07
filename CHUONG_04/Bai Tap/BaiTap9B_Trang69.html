@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript 9B</title>
+    <style>
+        body
+        {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table 
+        {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td 
+        {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th 
+        {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lý thiết bị văn phòng</h2>
+    <label for="deviceInput">Nhập tên thiết bị:</label>
+    <input type="text" id="deviceInput" placeholder="Ví dụ: Computer, Printer...">
+    <button onclick="addDevice()">Thêm thiết bị</button>
+    <button onclick="filterComputer()">Hiển thị thiết bị "Computer"</button>
+    
+    <h3>Danh sách thiết bị "Computer":</h3>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên thiết bị</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu kết quả sẽ hiển thị ở đây -->
+        </tbody>
+    </table>
+
+    <script>
+        // Khai báo mảng để lưu trữ danh sách thiết bị
+        let devices = [];
+        
+        // Hàm thêm thiết bị vào mảng
+        function addDevice()
+        {
+            let input = document.getElementById("deviceInput");
+            let deviceName = input.value.trim();
+
+            if (deviceName === "")
+            {
+                alert("Vui lòng nhập tên thiết bị!");
+                return;
+            }
+
+            // Thêm thiết bị vào mảng Array 
+            devices.push(deviceName);
+            alert("Đã thêm thiết bị thành công!");
+
+            // Xoá ô nhập liệu 
+            input.value = "";
+            input.focus();
+        }
+
+        // Hàm lọc và hiển thị các thiết bị có tên là "Computer"
+        function filterComputer()
+        {
+            let tbody = document.getElementById("resultTable").getElementsByTagName("tbody")[0];
+            tbody.innerHTML = ""; // Xoá dữ liệu cũ trên bảng 
+
+            let count = 1;
+            // Duyệt qua mảng để tìm các thiêt bị có tên là "Computer" (không phân biệt hoa thường)
+            for (let i = 0; i < devices.length; i++)
+            {
+                if (devices[i].toLowerCase() === "computer")
+                {
+                    let row = tbody.insertRow();
+                    let cell1 = row.insertCell(0);
+                    let cell2 = row.u=insertCell(1);
+
+                    cell1.innerHTML = count++;
+                    cell2.innerHTML = devices[i];
+                }
+            }
+            
+            if (count === 1)
+            {
+                let row = tbody.insertRow();
+                let cell = row.insertCell(0);
+                cell.colSpan = 2;
+                cell.innerHTML = "Không tìm thấy thiết bị nào có tên là 'Computer'.";
+            }
+        } 
+    </script>
+</body>
+</html>
