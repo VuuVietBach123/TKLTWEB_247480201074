@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 12B - Đọc giá trị Text Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 90px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 6px 10px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            padding: 8px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+        #ketQua {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #f1f3f5;
+            border-left: 4px solid #28a745;
+            width: 300px;
+            display: none; /* Mặc định ẩn khung kết quả đi */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 12B: Đọc giá trị từ Text</h2>
+
+    <div class="form-group">
+        <label for="HoTen">HoTen:</label>
+        <input type="text" id="HoTen" name="HoTen" placeholder="Nhập họ và tên...">
+    </div>
+
+    <div class="form-group">
+        <label for="NamSinh">NamSinh:</label>
+        <input type="text" id="NamSinh" name="NamSinh" placeholder="Nhập năm sinh...">
+    </div>
+
+    <div class="form-group">
+        <!-- Nút theo yêu cầu với name="HienThi" và value="Hiển thị" -->
+        <input type="button" name="HienThi" value="Hiển thị" onclick="hienThongTin()">
+    </div>
+
+    <!-- Vùng chứa kết quả hiển thị ra trang Web -->
+    <div id="ketQua"></div>
+
+    <script>
+        // Hàm thực hiện đọc giá trị và hiển thị
+        function hienThongTin() 
+        {
+            // Bước 1: Đọc giá trị từ các phần tử text box thông qua ID
+            let hoTenVal = document.getElementById("HoTen").value;
+            let namSinhVal = document.getElementById("NamSinh").value;
+
+            // Bước 2: Lấy đối tượng chứa kết quả và hiển thị
+            let boxKetQua = document.getElementById("ketQua");
+            
+            // Hiển thị nội dung ra trang Web
+            boxKetQua.style.display = "block"; // Hiện khung kết quả
+            boxKetQua.innerHTML = "<strong>Thông tin đã nhập:</strong><br>" +
+                                  "Họ tên: " + hoTenVal + "<br>" +
+                                  "Năm sinh: " + namSinhVal;
+        }
+    </script>
+
+</body>
+</html>

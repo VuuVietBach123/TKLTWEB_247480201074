@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 14A - Tính toán số học</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 6px 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .operations {
+            margin: 15px 0;
+            margin-left: 100px;
+        }
+        .operations label {
+            width: auto;
+            margin-right: 15px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        input[type="button"] {
+            padding: 8px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 100px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 14A: Tính toán số học</h2>
+
+    <div class="form-group">
+        <label for="SoHang1">Số hạng 1:</label>
+        <input type="text" id="SoHang1" name="SoHang1" placeholder="Nhập số thứ nhất...">
+    </div>
+
+    <div class="form-group">
+        <label for="SoHang2">Số hạng 2:</label>
+        <input type="text" id="SoHang2" name="SoHang2" placeholder="Nhập số thứ hai...">
+    </div>
+
+    <!-- 4 nút lựa chọn phép tính tương ứng -->
+    <div class="operations">
+        <input type="radio" id="Cong" name="phepToan" value="cong" checked>
+        <label for="Cong">Cộng</label>
+
+        <input type="radio" id="Tru" name="phepToan" value="tru">
+        <label for="Tru">Trừ</label>
+
+        <input type="radio" id="Nhan" name="phepToan" value="nhan">
+        <label for="Nhan">Nhân</label>
+
+        <input type="radio" id="Chia" name="phepToan" value="chia">
+        <label for="Chia">Chia</label>
+    </div>
+
+    <div class="form-group">
+        <!-- Nút Tính theo yêu cầu -->
+        <input type="button" name="Tinh" value="Tính" onclick="thucHienTinhToan()">
+    </div>
+
+    <div class="form-group">
+        <label for="KetQua">Kết quả:</label>
+        <input type="text" id="KetQua" name="KetQua" readonly>
+    </div>
+
+    <script>
+        // Hàm thực hiện tính toán số học
+        function thucHienTinhToan() {
+            // Bước 1: Đọc giá trị từ hai ô SoHang1 và SoHang2 và chuyển sang kiểu số (float)
+            let so1 = parseFloat(document.getElementById("SoHang1").value);
+            let so2 = parseFloat(document.getElementById("SoHang2").value);
+
+            // Kiểm tra xem người dùng đã nhập số hợp lệ chưa
+            if (isNaN(so1) || isNaN(so2)) {
+                alert("Vui lòng nhập đầy đủ giá trị số cho Cả Số hạng 1 và Số hạng 2!");
+                return;
+            }
+
+            let ketQua = 0;
+
+            // Bước 2: Kiểm tra xem nút phép tính nào đang được chọn
+            if (document.getElementById("Cong").checked) {
+                ketQua = so1 + so2;
+            } else if (document.getElementById("Tru").checked) {
+                ketQua = so1 - so2;
+            } else if (document.getElementById("Nhan").checked) {
+                ketQua = so1 * so2;
+            } else if (document.getElementById("Chia").checked) {
+                if (so2 === 0) {
+                    alert("Không thể chia cho 0!");
+                    return;
+                }
+                ketQua = so1 / so2;
+            }
+
+            // Bước 3: Ghi kết quả vào ô KetQua
+            document.getElementById("KetQua").value = ketQua;
+        }
+    </script>
+
+</body>
+</html>

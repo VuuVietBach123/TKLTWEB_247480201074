@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script language = "JavaScript">
+    function KiemTra()
+    {
+        if (NoiDung.value.length > 200) alert("Bạn đã gõ quá số ký tự cho phép!");
+        SoKyTu.value = NoiDung.value.length; // Hiển thị số ký tự trong textbox SoKyTu
+    }
+</script>
+<body style="font-family: Arial">
+    Số ký tự đã gõ: <input type="text" name="SoKyTu"> <BR>
+    <textarea name="NoiDung" cols = 50 rows = "10" onKeyUp = "KiemTra();"></textarea>
+</body>
+</html>

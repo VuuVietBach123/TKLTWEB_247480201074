@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 11B - Thay đổi màu nền</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            /* Tạo hiệu ứng chuyển màu mượt mà */
+            transition: background-color 0.4s ease;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        /* Định dạng màu sắc trực quan cho các nút */
+        .btn-blue { background-color: #007bff; color: white; }
+        .btn-green { background-color: #28a745; color: white; }
+        .btn-yellow { background-color: #ffc107; color: black; }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 11B: Thay đổi thuộc tính đối tượng</h2>
+    <p>Nhấn vào các nút bên dưới để đổi màu nền trang Web:</p>
+
+    <!-- Tạo ba nút theo yêu cầu -->
+    <button class="btn-blue" onclick="doiMauNen('blue')">Màu xanh dương</button>
+    <button class="btn-green" onclick="doiMauNen('green')">Màu xanh lá</button>
+    <button class="btn-yellow" onclick="doiMauNen('yellow')">Màu vàng</button>
+
+    <script>
+        // Hàm thực hiện thay đổi thuộc tính màu nền của đối tượng document.body
+        function doiMauNen(maura) {
+            document.body.style.backgroundColor = maura;
+        }
+    </script>
+
+</body>
+</html>

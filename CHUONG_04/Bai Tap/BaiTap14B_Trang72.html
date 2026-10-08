@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập JavaScript 14B</title>
+</head>
+<body>
+
+    <h2>CHƯƠNG TRÌNH TÍNH TOÁN SỐ HỌC</h2>
+
+    <label>Số hạng 1:</label>
+    <input type="text" id="SoHang1">
+    <br><br>
+
+    <label>Số hạng 2:</label>
+    <input type="text" id="SoHang2">
+    <br><br>
+
+    <label>Phép tính:</label>
+    <input type="radio" name="phepTinh" value="cong"> Cộng
+    <input type="radio" name="phepTinh" value="tru"> Trừ
+    <input type="radio" name="phepTinh" value="nhan"> Nhân
+    <input type="radio" name="phepTinh" value="chia"> Chia
+    <br><br>
+
+    <button onclick="tinh()">Tính</button>
+    <br><br>
+
+    <label>Kết quả:</label>
+    <input type="text" id="KetQua" readonly>
+
+    <script>
+        function tinh() {
+            // Lấy dữ liệu từ hai ô nhập
+            let so1 = parseFloat(document.getElementById("SoHang1").value);
+            let so2 = parseFloat(document.getElementById("SoHang2").value);
+
+            // Kiểm tra dữ liệu nhập
+            if (isNaN(so1) || isNaN(so2)) {
+                alert("Vui lòng nhập hai số!");
+                return;
+            }
+
+            // Lấy phép tính được chọn
+            let phepTinh = document.querySelector(
+                'input[name="phepTinh"]:checked'
+            );
+
+            if (phepTinh == null) {
+                alert("Vui lòng chọn phép tính!");
+                return;
+            }
+
+            let ketQua;
+
+            // Thực hiện phép tính
+            switch (phepTinh.value) {
+                case "cong":
+                    ketQua = so1 + so2;
+                    break;
+
+                case "tru":
+                    ketQua = so1 - so2;
+                    break;
+
+                case "nhan":
+                    ketQua = so1 * so2;
+                    break;
+
+                case "chia":
+                    if (so2 === 0) {
+                        alert("Không thể chia cho 0!");
+                        return;
+                    }
+                    ketQua = so1 / so2;
+                    break;
+            }
+
+            // Hiển thị kết quả
+            document.getElementById("KetQua").value = ketQua;
+        }
+    </script>
+
+</body>
+</html>

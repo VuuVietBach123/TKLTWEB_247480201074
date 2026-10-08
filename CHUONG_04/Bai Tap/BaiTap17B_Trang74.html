@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 17B - Thay đổi màu nền bằng Radio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            /* Tạo hiệu ứng chuyển màu mượt mà */
+            transition: background-color 0.4s ease;
+        }
+        h2 {
+            color: #333;
+        }
+        .radio-group {
+            margin: 20px 0;
+        }
+        .radio-group label {
+            margin-right: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 17B: Thay đổi màu nền trang Web</h2>
+    <p>Vui lòng chọn một màu bên dưới để đổi màu nền tài liệu:</p>
+
+    <!-- Các nút chọn lựa radio gồm 4 màu: yellow, green, brown, magenta -->
+    <div class="radio-group">
+        <input type="radio" id="yellow" name="colorGroup" value="yellow" onchange="thayDoiMauNen(this.value)">
+        <label for="yellow">Yellow</label>
+
+        <input type="radio" id="green" name="colorGroup" value="green" onchange="thayDoiMauNen(this.value)">
+        <label for="green">Green</label>
+
+        <input type="radio" id="brown" name="colorGroup" value="brown" onchange="thayDoiMauNen(this.value)">
+        <label for="brown">Brown</label>
+
+        <input type="radio" id="magenta" name="colorGroup" value="magenta" onchange="thayDoiMauNen(this.value)">
+        <label for="magenta">Magenta</label>
+    </div>
+
+    <script>
+        // Hàm thực hiện thay đổi màu nền của đối tượng document.body
+        function thayDoiMauNen(mauSac) {
+            document.body.style.backgroundColor = mauSac;
+        }
+    </script>
+
+</body>
+</html>

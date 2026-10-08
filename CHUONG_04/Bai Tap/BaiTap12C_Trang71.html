@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 12C - Ghép họ và tên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 90px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 6px 10px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 12C: Ghép Họ và Tên</h2>
+
+    <div class="form-group">
+        <label for="Ho">Họ:</label>
+        <input type="text" id="Ho" name="Ho" value="Họ">
+    </div>
+
+    <div class="form-group">
+        <label for="Ten">Tên:</label>
+        <input type="text" id="Ten" name="Ten" value="Tên">
+    </div>
+
+    <div class="form-group">
+        <!-- Nút theo yêu cầu với name="HienThi" và value="Hiển thị" -->
+        <input type="button" name="HienThi" value="Hiển thị" onclick="hienThiHoTen()">
+    </div>
+
+    <div class="form-group">
+        <label for="HoTen">HoTen:</label>
+        <input type="text" id="HoTen" name="HoTen" value="">
+    </div>
+
+    <script>
+        // Hàm thực hiện đọc giá trị Họ và Tên, sau đó ghép lại hiển thị vào ô HoTen
+        function hienThiHoTen() {
+            // Bước 1: Đọc giá trị từ hai ô Textbox "Ho" và "Ten"
+            let hoVal = document.getElementById("Ho").value;
+            let tenVal = document.getElementById("Ten").value;
+
+            // Bước 2: Ghép chuỗi (có khoảng trắng ở giữa)
+            let hoVaTenVal = hoVal + " " + tenVal;
+
+            // Bước 3: Gán giá trị sau khi ghép vào thuộc tính value của ô Textbox "HoTen"
+            document.getElementById("HoTen").value = hoVaTenVal;
+        }
+    </script>
+
+</body>
+</html>

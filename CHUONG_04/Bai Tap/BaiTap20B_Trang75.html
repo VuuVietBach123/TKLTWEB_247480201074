@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript 20B - Tính lương nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: inline-block;
+            width: 130px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 6px 10px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        /* Định dạng các ô kết quả tự động để người dùng dễ phân biệt */
+        input[readonly] {
+            background-color: #f1f3f5;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài tập JavaScript 20B: Tính lương nhân viên</h2>
+
+    <div class="form-group">
+        <label for="HoTen">HoTen:</label>
+        <input type="text" id="HoTen" name="HoTen" placeholder="Nhập họ tên nhân viên...">
+    </div>
+
+    <div class="form-group">
+        <label for="NamVaoLam">NamVaoLam:</label>
+        <input type="text" id="NamVaoLam" name="NamVaoLam" placeholder="VD: 2018" oninput="tinhToanLuong()">
+    </div>
+
+    <div class="form-group">
+        <label for="HeSo">HeSo:</label>
+        <input type="text" id="HeSo" name="HeSo" placeholder="VD: 2.34" oninput="tinhToanLuong()">
+    </div>
+
+    <div class="form-group">
+        <label for="LuongCoSo">LuongCoSo:</label>
+        <input type="text" id="LuongCoSo" name="LuongCoSo" placeholder="VD: 1800000" oninput="tinhToanLuong()">
+    </div>
+
+    <div class="form-group">
+        <label for="LuongCoBan">LuongCoBan:</label>
+        <input type="text" id="LuongCoBan" name="LuongCoBan" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="PhuCap">PhuCap:</label>
+        <input type="text" id="PhuCap" name="PhuCap" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="ThamNien">ThamNien:</label>
+        <input type="text" id="ThamNien" name="ThamNien" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="ThanhTien">ThanhTien:</label>
+        <input type="text" id="ThanhTien" name="ThanhTien" readonly>
+    </div>
+
+    <script>
+        // Hàm tự động tính toán lương và thâm niên
+        function tinhToanLuong() {
+            // Bước 1: Đọc giá trị từ các ô nhập liệu đầu vào
+            let namVaoLam = parseFloat(document.getElementById("NamVaoLam").value);
+            let heSo = parseFloat(document.getElementById("HeSo").value);
+            let luongCoSo = parseFloat(document.getElementById("LuongCoSo").value);
+
+            // Lấy năm hiện tại tự động
+            let namHienTai = new Date().getFullYear();
+
+            // Khởi tạo biến kết quả
+            let luongCoBan = 0;
+            let phuCap = 0;
+            let thamNien = 0;
+            let thanhTien = 0;
+
+            // Bước 2: Thực hiện tính toán theo công thức đề bài
+            if (!isNaN(heSo) && !isNaN(luongCoSo)) {
+                luongCoBan = heSo * luongCoSo;
+            }
+
+            phuCap = luongCoBan * 0.25;
+
+            if (!isNaN(namVaoLam)) {
+                thamNien = namHienTai - namVaoLam;
+                if (thamNien < 0) thamNien = 0; // Đảm bảo thâm niên không bị âm
+            }
+
+            thanhTien = luongCoBan + phuCap;
+
+            // Bước 3: Cập nhật kết quả vào các hộp text tương ứng
+            document.getElementById("LuongCoBan").value = isNaN(luongCoBan) || luongCoBan === 0 ? "" : luongCoBan;
+            document.getElementById("PhuCap").value = isNaN(phuCap) || phuCap === 0 ? "" : phuCap;
+            document.getElementById("ThamNien").value = isNaN(namVaoLam) ? "" : thamNien + " năm";
+            document.getElementById("ThanhTien").value = isNaN(thanhTien) || thanhTien === 0 ? "" : thanhTien;
+        }
+    </script>
+
+</body>
+</html>
