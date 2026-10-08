@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập JavaScript 21C</title>
+</head>
+<body>
+    <h3>Bài tập JavaScript 21C</h3>
+    <label>Số 1: </label>
+    <input type="number" id="So01"><br><br>
+    
+    <label>Số 2: </label>
+    <input type="number" id="so02"><br><br>
+    
+    <label>Phép tính: </label>
+    <select id="phepTinhSelect">
+        <option value="+">Cộng</option>
+        <option value="-">Trừ</option>
+        <option value="*">Nhân</option>
+        <option value="/">Chia</option>
+    </select><br><br>
+
+    <label>Kết quả: </label>
+    <input type="text" id="Ketqua" readonly><br><br>
+
+    <button onclick="thucHienTinh()">Tính</button>
+
+    <script>
+        function thucHienTinh() {
+            let num1 = parseFloat(document.getElementById("So01").value);
+            let num2 = parseFloat(document.getElementById("so02").value);
+            let kq = document.getElementById("Ketqua");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                kq.value = "Vui lòng nhập đủ 2 số!";
+                return;
+            }
+
+            let phepTinh = document.getElementById("phepTinhSelect").value;
+
+            switch (phepTinh) {
+                case '+':
+                    kq.value = num1 + num2;
+                    break;
+                case '-':
+                    kq.value = num1 - num2;
+                    break;
+                case '*':
+                    kq.value = num1 * num2;
+                    break;
+                case '/':
+                    kq.value = num2 !== 0 ? num1 / num2 : "Không chia được cho 0";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

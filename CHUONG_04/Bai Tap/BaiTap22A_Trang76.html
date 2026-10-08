@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập JavaScript 22A</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td {
+            padding: 5px;
+        }
+        button {
+            width: 50px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #Ketqua {
+            width: 260px;
+            height: 30px;
+            font-size: 18px;
+            text-align: right;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Bài tập JavaScript 22A - Máy tính cá nhân</h3>
+    
+    <input type="text" id="Ketqua"><br>
+
+    <table border="1">
+        <tr>
+            <td><button onclick="nhap('0')">0</button></td>
+            <td><button onclick="nhap('1')">1</button></td>
+            <td><button onclick="nhap('2')">2</button></td>
+            <td><button onclick="nhap('3')">3</button></td>
+            <td><button onclick="nhap('4')">4</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap('5')">5</button></td>
+            <td><button onclick="nhap('6')">6</button></td>
+            <td><button onclick="nhap('7')">7</button></td>
+            <td><button onclick="nhap('8')">8</button></td>
+            <td><button onclick="nhap('9')">9</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap('+')">+</button></td>
+            <td><button onclick="nhap('-')">-</button></td>
+            <td><button onclick="nhap('*')">*</button></td>
+            <td><button onclick="nhap('/')">/</button></td>
+            <td><button onclick="tinhKetQua()">=</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="xoaText()">C</button></td>
+            <td colspan="4"></td>
+        </tr>
+    </table>
+
+    <script>
+        let screen = document.getElementById("Ketqua");
+
+        function nhap(val) {
+            screen.value += val;
+        }
+
+        function xoaText() {
+            screen.value = "";
+        }
+
+        function tinhKetQua() {
+            try {
+                if (screen.value.trim() !== "") {
+                    screen.value = eval(screen.value);
+                }
+            } catch (error) {
+                screen.value = "Lỗi biểu thức";
+            }
+        }
+    </script>
+</body>
+</html>
