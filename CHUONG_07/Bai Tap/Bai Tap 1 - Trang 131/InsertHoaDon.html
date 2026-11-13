@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Hàng Hoá</title>
+</head>
+<body>
+    <h2>NHẬP THÔNG TIN HOÁ ĐƠN</h2>
+    <form action="InsertHoaDon.php" method="POST">
+        Mã hoá đơn: <input type="text" name="mahd" required><br><br>
+        Mã khách hàng: <input type="text" name="makh" required><br><br>
+        Mã hàng: <input type="text" name="mahang" required><br><br>
+        Số lượng: <input type="number" name="soluong" required><br><br>
+        Ngày lập: <input type="date" name="ngaylap" required><br><br>
+        <input type="submit" value="Lưu hoá đơn">
+        <input type="reset" value="Nhập lại">
+    </form>
+</body>
+</html>
